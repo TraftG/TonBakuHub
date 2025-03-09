@@ -33,7 +33,7 @@ const QuoteSection: React.FC<QuoteSectionProps> = ({
             <div className="absolute -top-60 right-0 -z-20 w-[400px] h-[600px]">
               <div className="relative w-full h-full">
                 <img 
-                  src="/paveldurov.png" 
+                  src="/paveldurov.png"
                   alt="Pavel Durov" 
                   className="w-full h-full object-cover object-top"
                 />
