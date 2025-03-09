@@ -14,22 +14,6 @@ const ContactSection = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
   };
-  
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Сообщение отправлено",
-        description: "Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.",
-      });
-      
-      setFormData({ name: "", email: "", message: "" });
-      setLoading(false);
-    }, 1500);
-  };
 
   return (
     <section className="py-32 px-4 bg-black" id="contact">
@@ -46,14 +30,19 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           {/* Форма */}
           <div className="space-y-12">
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form 
+              action="https://formsubmit.co/tonbakuhub@gmail.com" 
+              method="POST"
+              className="space-y-8"
+            >
+              <input type="hidden" name="_next" value="https://traftg.github.io/TonBakuHub/" />
+              <input type="hidden" name="_subject" value="Новое сообщение с сайта TON Baku" />
+              
               <div className="space-y-4">
                 <input
                   type="text"
                   name="name"
                   placeholder="Ваше имя"
-                  value={formData.name}
-                  onChange={handleChange}
                   required
                   className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
                 />
@@ -61,16 +50,12 @@ const ContactSection = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
-                  value={formData.email}
-                  onChange={handleChange}
                   required
                   className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-white transition-colors"
                 />
                 <textarea
                   name="message"
                   placeholder="Ваше сообщение"
-                  value={formData.message}
-                  onChange={handleChange}
                   required
                   rows={4}
                   className="w-full bg-transparent border-b border-white/20 py-4 text-white placeholder:text-white/50 focus:outline-none focus:border-white transition-colors resize-none"
@@ -79,10 +64,9 @@ const ContactSection = () => {
 
               <button
                 type="submit"
-                disabled={loading}
                 className="notcoin-button w-full"
               >
-                {loading ? "Отправка..." : "Отправить сообщение"}
+                Отправить сообщение
               </button>
             </form>
           </div>
@@ -108,8 +92,7 @@ const ContactSection = () => {
                   className="block group"
                 >
                   <p className="text-sm text-white/50 mb-2">Email</p>
-                  <p className="text-lg notcoin-link">tonbakuhub@gmail.com
-                  </p>
+                  <p className="text-lg notcoin-link">tonbakuhub@gmail.com</p>
                 </a>
 
                 <div className="block">

@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { Globe, Mail, MessageCircle } from "lucide-react";
 
@@ -67,13 +66,13 @@ const Footer = () => {
                 </span>
               </a>
               <a 
-                href="https://tonbaku.com" 
+                href="https://traftg.github.io/TonBakuHub/" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-300 hover:text-white transition-colors"
               >
-                <Globe size={18} />
-                <span>tonbaku.com</span>
+                <Globe className="shrink-0" size={18} />
+                <span className="break">traftg.github.io/TonBakuHub/</span>
               </a>
             </div>
           </div>
