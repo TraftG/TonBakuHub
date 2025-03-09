@@ -24,7 +24,7 @@ const Index = () => {
       {/* Background pattern */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <img 
-          src="./FON.png" 
+          src="/TonBakuHub/FON.png" 
           alt="Background pattern" 
           className="w-full h-full object-cover opacity-10"
         />
@@ -59,7 +59,7 @@ const Index = () => {
           quote="Вообще-то у всех технологических революций похожий путь принятия"
           author="Виталик Бутерин"
           position="left"
-          image="./vitalik.png"
+          image="/TonBakuHub/vitalik.png"
           isVitalik={true}
         />
         <ExperienceSection />
