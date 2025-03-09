@@ -11,12 +11,12 @@ const TeamSection = () => {
     {
       name: 'Marat',
       role: 'Founder',
-      image: '/team/Marat.png'
+      image: '/TonBakuHub/Marat.png'
     },
     {
       name: 'Traft',
       role: 'Co-founder',
-      image: '/team/taxmasib.jpg'
+      image: '/TonBakuHub/taxmasib.jpg'
     }
   ];
 

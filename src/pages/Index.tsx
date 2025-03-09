@@ -24,7 +24,7 @@ const Index = () => {
       {/* Background pattern */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
         <img 
-          src={import.meta.env.BASE_URL + 'FON.png'} 
+          src="/TonBakuHub/FON.png" 
           alt="Background pattern" 
           className="w-full h-full object-cover opacity-10"
         />
