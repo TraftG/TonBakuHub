@@ -1,0 +1,175 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 1rem;
+  /* Настройка медленной прокрутки */
+  --scroll-duration: 1.5s;
+  scroll-timeline: --scroll-timeline block;
+}
+
+/* Добавляем плавность для всех прокручиваемых элементов */
+* {
+  scroll-behavior: inherit;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 0%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 5%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 10%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 0% 100%;
+
+    --radius: 0;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 60%;
+  }
+
+  * {
+    @apply border-border;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'><path fill='white' d='M12 2 L22 20 C22.5 21.5 21.5 22.5 20 22 L12 18 L4 22 C2.5 22.5 1.5 21.5 2 20 L12 2Z'/><path fill='none' stroke='white' stroke-width='1.5' d='M12 4 L12 18'/></svg>") 12 12, auto;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+  }
+
+  body {
+    @apply bg-black text-white;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@layer components {
+  .button-hover {
+    @apply hover:bg-white hover:text-black transition-all duration-500;
+  }
+  
+  .card-hover {
+    @apply hover:bg-white/5 transition-all duration-300;
+  }
+  
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .pixel-text {
+    @apply font-pixel uppercase tracking-wider;
+  }
+
+  .pixel-bg {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 5px 5px;
+  }
+
+  .pixel-border {
+    @apply border-2 border-white/50;
+    box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.1);
+  }
+
+  .pixel-button {
+    @apply font-pixel px-4 py-2 border-2 border-white/70 bg-transparent hover:bg-white hover:text-black transition-colors duration-200;
+  }
+
+  .glitch {
+    @apply relative overflow-hidden;
+  }
+
+  .glitch::before,
+  .glitch::after {
+    @apply content-[''] absolute top-0 left-0 w-full h-full opacity-50;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .glitch::before {
+    @apply text-white left-[2px] bg-black/30;
+    animation: glitch-anim 2s infinite linear alternate-reverse;
+  }
+
+  .glitch::after {
+    @apply text-white left-[-2px] bg-black/30;
+    animation: glitch-anim2 3s infinite linear alternate-reverse;
+  }
+
+  @keyframes glitch-anim {
+    0% { clip: rect(5px, 9999px, 9px, 0); }
+    25% { clip: rect(65px, 9999px, 59px, 0); }
+    50% { clip: rect(25px, 9999px, 29px, 0); }
+    75% { clip: rect(87px, 9999px, 67px, 0); }
+    100% { clip: rect(15px, 9999px, 19px, 0); }
+  }
+
+  @keyframes glitch-anim2 {
+    0% { clip: rect(26px, 9999px, 31px, 0); }
+    25% { clip: rect(44px, 9999px, 77px, 0); }
+    50% { clip: rect(2px, 9999px, 97px, 0); }
+    75% { clip: rect(13px, 9999px, 46px, 0); }
+    100% { clip: rect(21px, 9999px, 31px, 0); }
+  }
+
+  .hero-text {
+    @apply text-6xl md:text-8xl font-bold tracking-tighter leading-tight;
+  }
+
+  .section-text {
+    @apply text-xl md:text-2xl font-light leading-relaxed max-w-3xl;
+  }
+
+  .notcoin-link {
+    @apply relative inline-block after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1px] after:bg-white hover:after:w-full after:transition-all after:duration-300;
+  }
+
+  .notcoin-button {
+    @apply px-6 py-3 border border-white/20 hover:border-white transition-all duration-300 text-sm uppercase tracking-wider;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 0 30px rgba(255,255,255,0.5);
+  }
+}
