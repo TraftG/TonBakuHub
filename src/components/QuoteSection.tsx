@@ -33,7 +33,7 @@ const QuoteSection: React.FC<QuoteSectionProps> = ({
             <div className="absolute -top-60 right-0 -z-20 w-[400px] h-[600px]">
               <div className="relative w-full h-full">
                 <img 
-                  src="/TonBakuHub/paveldurov.png" 
+                  src="/paveldurov.png"
                   alt="Pavel Durov" 
                   className="w-full h-full object-cover object-top"
                 />
@@ -46,7 +46,7 @@ const QuoteSection: React.FC<QuoteSectionProps> = ({
             <div className="absolute -top-40 right-0 -z-20 w-[400px] h-[600px]">
               <div className="relative w-full h-full">
                 <img 
-                  src={image}
+                  src="/vitalik.png"
                   alt="Vitalik Buterin" 
                   className="w-full h-full object-cover object-top grayscale"
                 />
@@ -59,7 +59,7 @@ const QuoteSection: React.FC<QuoteSectionProps> = ({
             <div className="absolute -top-20 right-0 -z-20 w-[300px] h-[300px]">
               <div className="relative w-full h-full">
                 <img 
-                  src="/TonBakuHub/Notcoin.png" 
+                  src="/Notcoin.png" 
                   alt="Notcoin Logo" 
                   className="w-full h-full object-contain opacity-80"
                 />

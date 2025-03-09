@@ -23,7 +23,11 @@ const Index = () => {
     <div className="bg-black text-white min-h-screen relative overflow-hidden">
       {/* Background pattern */}
       <div className="fixed inset-0 w-full h-full z-0 pointer-events-none">
-    
+        <img 
+          src="./FON.png" 
+          alt="Background pattern" 
+          className="w-full h-full object-cover opacity-10"
+        />
       </div>
       
       <Header />
@@ -55,7 +59,7 @@ const Index = () => {
           quote="Вообще-то у всех технологических революций похожий путь принятия"
           author="Виталик Бутерин"
           position="left"
-          image={import.meta.env.BASE_URL + 'vitalik.png'}
+          image="./vitalik.png"
           isVitalik={true}
         />
         <ExperienceSection />
