@@ -6,22 +6,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  background-color: #000000;
-}
-
-html, body {
-  background-color: #000000 !important;
-  margin: 0;
-  padding: 0;
-  min-height: 100vh;
-}
-
-#root {
-  background-color: #000000 !important;
-  min-height: 100vh;
-}
-
 html {
   scroll-behavior: smooth;
   scroll-padding: 1rem;
